@@ -18,6 +18,7 @@ const ProductContext = React.createContext();
      onEdit = (id) => {
          const tempProduct = this.state.AllData;
          const index = tempProduct.indexOf(this.getRecord(id));
+         const selectProduct = tempProduct[index];
      }
     render() {
         console.log(this.state.AllData);
