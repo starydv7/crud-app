@@ -21,6 +21,7 @@ export default class Home extends Component {
                     <td>
                       <input
                         type="text"
+                        placeholder="title..."
                         value={value.title}
                         onChange={(e) => {
                           value.updateValue(e, "title");
@@ -30,6 +31,7 @@ export default class Home extends Component {
                     <td>
                       <input
                         type="text"
+                        placeholder="info..."
                         value={value.info}
                         onChange={(e) => {
                           value.updateValue(e, "info");
@@ -40,6 +42,7 @@ export default class Home extends Component {
                       {" "}
                       <input
                         type="text"
+                        placeholder="price..."
                         value={value.price}
                         onChange={(e) => {
                           value.updateValue(e, "price");
@@ -50,7 +53,7 @@ export default class Home extends Component {
                       {" "}
                       <input
                         type="text"
-                        placeholder="Compant..."
+                        placeholder="Company..."
                         value={value.company}
                         onChange={(e) => {
                           value.updateValue(e, "company");
