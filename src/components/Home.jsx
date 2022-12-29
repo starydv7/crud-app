@@ -16,8 +16,44 @@ export default class Home extends Component {
                     <th>Price</th>
                     <th>Company</th>
                     <th>InCart</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        type="text"
+                        value={value.info}
+                        onChange={(e) => {
+                          value.updateValue(e, "info");
+                        }}
+                      />
+                    </td>
+                    <td>
+                      {" "}
+                      <input
+                        type="text"
+                        value={value.price}
+                        onChange={(e) => {
+                          value.updateValue(e, "price");
+                        }}
+                      />
+                    </td>
+                    <td>
+                      {" "}
+                      <input
+                        type="text"
+                        value={value.company}
+                        onChange={(e) => {
+                          value.updateValue(e, "company");
+                        }}
+                      />
+                            </td>
+                            <td>
+                                <button onClick={() => { value.onsave(value.id) }}>
+                                Save
+                            </button>
+                            </td>
                   </tr>
                   {value.AllData.map((item) => {
                     return (
