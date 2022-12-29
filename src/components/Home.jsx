@@ -13,9 +13,21 @@ export default class Home extends Component {
                                 <tr>
                                     <th>Title</th>
                                     <th>Info</th>
+                                    <th>Price</th>
                                     <th>Company</th>
                                     <th>Actions</th>
                                 </tr>
+                                {value.AllData.map((item) => {
+                                    return (
+                                      <tr>
+                                        <td>{item.title}</td>
+                                        <td>{item.info}</td>
+                                        <td>{item.price}</td>
+                                            <td>{item.company}</td>
+                                            <td>{item.inCart .toString()}</td>
+                                      </tr>
+                                    );
+                               })} 
                             </tbody>
                         </table>
                     )
