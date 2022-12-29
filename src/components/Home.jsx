@@ -24,7 +24,12 @@ export default class Home extends Component {
                                         <td>{item.info}</td>
                                         <td>{item.price}</td>
                                             <td>{item.company}</td>
-                                            <td>{item.inCart .toString()}</td>
+                                            <td>{item.inCart.toString()}</td>
+                                            <td> 
+                                                <button onClick={() => { value.onEdit() }}>
+Edit
+                                                </button>
+                                            </td>
                                       </tr>
                                     );
                                })} 
