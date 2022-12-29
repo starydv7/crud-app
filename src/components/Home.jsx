@@ -15,11 +15,18 @@ export default class Home extends Component {
                     <th>Info</th>
                     <th>Price</th>
                     <th>Company</th>
-                    <th>InCart</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Action</th>
                   </tr>
                   <tr>
+                    <td>
+                      <input
+                        type="text"
+                        value={value.title}
+                        onChange={(e) => {
+                          value.updateValue(e, "title");
+                        }}
+                      />
+                    </td>
                     <td>
                       <input
                         type="text"
@@ -43,19 +50,23 @@ export default class Home extends Component {
                       {" "}
                       <input
                         type="text"
+                        placeholder="Compant..."
                         value={value.company}
                         onChange={(e) => {
                           value.updateValue(e, "company");
                         }}
                       />
-                            </td>
-                            <td>
+                    </td>
 
-                                <button onClick={() => { value.onsave(value.id) }}>
-                                Save
-                            </button>
-                            </td>
-                            
+                    <td>
+                      <button
+                        onClick={() => {
+                          value.onsave(value.id);
+                        }}
+                      >
+                        {value.id ? "Save" : "Add new"}
+                      </button>
+                    </td>
                   </tr>
                   {value.AllData.map((item) => {
                     return (
@@ -64,7 +75,7 @@ export default class Home extends Component {
                         <td>{item.info}</td>
                         <td>{item.price}</td>
                         <td>{item.company}</td>
-                        <td>{item.inCart.toString()}</td>
+
                         <td>
                           <button
                             onClick={() => {

@@ -4,8 +4,16 @@ import { rowData } from './AppData';
 const ProductContext = React.createContext();
  class ProductProvider extends Component {
     state = {
-        AllData:rowData,
-    }
+        AllData: rowData,
+        id: '',
+        title: '',
+        info: '',
+        company: '',
+        updateEdit:[]
+     }
+     onEdit = (id) => {
+         const tempProduct = tempProduct.indexOf(this.getRecord(id));
+     }
     render() {
         console.log(this.state.AllData);
     return (
