@@ -50,10 +50,12 @@ export default class Home extends Component {
                       />
                             </td>
                             <td>
+
                                 <button onClick={() => { value.onsave(value.id) }}>
                                 Save
                             </button>
                             </td>
+                            
                   </tr>
                   {value.AllData.map((item) => {
                     return (
