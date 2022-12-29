@@ -18,5 +18,5 @@ const ProductContext = React.createContext();
     )
   }
 }
-const ProductConsumer = ProductContext.Consumer();
-export {ProductProvider,ProductConsumer}
+const ProductConsumer = ProductContext.Consumer;
+export { ProductProvider, ProductConsumer };
