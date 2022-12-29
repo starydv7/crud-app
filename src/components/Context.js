@@ -11,8 +11,13 @@ const ProductContext = React.createContext();
         company: '',
         updateEdit:[]
      }
+     getRecord=(id)=>{
+         const product = this.state.AllData.find(item => item.id === id);
+         return product;
+     }
      onEdit = (id) => {
-         const tempProduct = tempProduct.indexOf(this.getRecord(id));
+         const tempProduct = this.state.AllData;
+         const index = tempProduct.indexOf(this.getRecord(id));
      }
     render() {
         console.log(this.state.AllData);
