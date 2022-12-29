@@ -52,6 +52,27 @@ const ProductContext = React.createContext();
              const SaveRecord = this.state.AllData;;
              const index = SaveRecord.indexOf(this.getRecord(id));
              const Record = SaveRecord[index];
+             Record['title'] = this.state.updateEdit[1];
+             Record['info'] = this.state.updateEdit[2];
+             Record['price'] = this.state.updateEdit[3];
+             Record['company'] = this.state.updateEdit[4];
+             this.setState({
+                 AllData: [...this.state.AllData],
+                 id:'',title:'',info:"",price:"",company:""
+                 })
+         } else {
+             const MaxId = Math.max(...TouchList.state.AllData.map((item) => item.id));
+             const id = MaxId + 1;
+             const newArr = [];
+             newArr['title'] = this.state.updateEdit[1];
+             newArr['info'] = this.state.updateEdit[2];
+             newArr['price'] = this.state.updateEdit[3];
+             newArr['company'] = this.state.updateEdit[4];
+              this.setState({
+                 AllData: [...this.state.AllData,newArr],
+                 id:'',title:'',info:"",price:"",company:""
+                 })
+
          }
          
      }
@@ -62,7 +83,10 @@ const ProductContext = React.createContext();
             <ProductContext.Provider
                 value={{
                     ...this.state,
-                onEdit:this.onEdit}}>
+                    onEdit: this.onEdit,
+                    updateValue: this.updateValue,
+                onSave:this.onSave
+                }}>
 {this.props.children}
             </ProductContext.Provider>
       </div>
