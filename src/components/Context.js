@@ -28,6 +28,33 @@ const ProductContext = React.createContext();
              
          })
      }
+     updateValue = (e, test) => {
+         if (test === "title") {
+             this.state.title = e.target.value;
+         }
+         if (test === 'info') {
+             this.state.info = e.target.value;
+         }
+         if (test === 'price') {
+             this.state.price = e.target.value;
+         }
+         if (test === 'company') {
+             this.state.company = e.target.value;
+         } const tempArr =
+             [this.state.id, this.state.title, this.state.info
+             , this.state.price, this.state.company];
+         this.setState({
+             updateEdit: tempArr
+         })
+     }
+     onSave = (id) => {
+         if (id !== '') {
+             const SaveRecord = this.state.AllData;;
+             const index = SaveRecord.indexOf(this.getRecord(id));
+             const Record = SaveRecord[index];
+         }
+         
+     }
     render() {
         console.log(this.state.AllData);
     return (

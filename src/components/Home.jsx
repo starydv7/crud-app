@@ -64,7 +64,7 @@ export default class Home extends Component {
                     <td>
                       <button
                         onClick={() => {
-                          value.onsave(value.id);
+                          value.onSave(value.id);
                         }}
                       >
                         {value.id ? "Save" : "Add new"}
