@@ -28,7 +28,7 @@ export default class Home extends Component {
                         <td>
                           <button
                             onClick={() => {
-                              value.onEdit();
+                              value.onEdit(item.id);
                             }}
                           >
                             Edit
@@ -37,7 +37,7 @@ export default class Home extends Component {
                         <td>
                           <button
                             onClick={() => {
-                              value.onEdit();
+                              value.onEdit(item.id);
                             }}
                           >
                             Edit
