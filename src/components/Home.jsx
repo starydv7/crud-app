@@ -15,7 +15,9 @@ export default class Home extends Component {
                     <th>Info</th>
                     <th>Price</th>
                     <th>Company</th>
-                    <th>Actions</th>
+                    <th>InCart</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                   </tr>
                   {value.AllData.map((item) => {
                     return (
@@ -37,10 +39,10 @@ export default class Home extends Component {
                         <td>
                           <button
                             onClick={() => {
-                              value.onEdit(item.id);
+                              value.onDelete(item.id);
                             }}
                           >
-                            Edit
+                            Delete
                           </button>
                         </td>
                       </tr>
