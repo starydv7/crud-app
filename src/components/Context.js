@@ -11,6 +11,7 @@ const ProductContext = React.createContext();
         company: '',
         updateEdit:[]
      }
+
      getRecord=(id)=>{
          const product = this.state.AllData.find(item => item.id === id);
          return product;
@@ -45,6 +46,12 @@ const ProductContext = React.createContext();
              , this.state.price, this.state.company];
          this.setState({
              updateEdit: tempArr
+         })
+     }
+     onDelete = (id) => {
+         const tempProduct = this.state.AllData.filter(item => item.id !== id);
+         this.setState({
+             AllData:tempProduct
          })
      }
      onSave = (id) => {
@@ -85,7 +92,8 @@ const ProductContext = React.createContext();
                     ...this.state,
                     onEdit: this.onEdit,
                     updateValue: this.updateValue,
-                onSave:this.onSave
+                    onSave: this.onSave,
+                onDelete:this.onDelete
                 }}>
 {this.props.children}
             </ProductContext.Provider>
