@@ -61,7 +61,7 @@ const ProductContext = React.createContext();
                  id:'',title:'',info:"",price:"",company:""
                  })
          } else {
-             const MaxId = Math.max(...TouchList.state.AllData.map((item) => item.id));
+             const MaxId = Math.max(...this.state.AllData.map((item) => item.id));
              const id = MaxId + 1;
              const newArr = [];
              newArr['title'] = this.state.updateEdit[1];
